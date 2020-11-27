@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/go-resty/resty/v2"
-
+	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
@@ -12,8 +12,6 @@ func Test_First(t *testing.T) {
 
 	resp, _ := client.R().Get("http://api.zippopotam.us/us/90210")
 
-	if resp.StatusCode() != 200 {
-		t.Errorf("Unexpected status code, expected %d, got %d instead", 200, resp.StatusCode())
-	}
+	assert.Equal(t, 200, resp.StatusCode())
 
 }
