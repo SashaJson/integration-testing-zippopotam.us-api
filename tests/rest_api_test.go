@@ -1,10 +1,11 @@
-package main
+package tests
 
 import (
 	"encoding/json"
 	"fmt"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"
+	"go-testing-api/structure"
 	"testing"
 )
 
@@ -27,7 +28,7 @@ func (suite *ZippopotamUsTestSuite) Test_GetUs90210_CountryShouldEqualUnitedStat
 
 	resp, _ := suite.ApiClient.R().Get("http://api.zippopotam.us/us/90210")
 
-	myResponse := LocationResponse{}
+	myResponse := structure.LocationResponse{}
 
 	err := json.Unmarshal(resp.Body(), &myResponse)
 

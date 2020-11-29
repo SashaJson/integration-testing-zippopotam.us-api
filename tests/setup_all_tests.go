@@ -1,6 +1,8 @@
-package main
+package tests
 
-import "github.com/go-resty/resty/v2"
+import (
+	"github.com/go-resty/resty/v2"
+)
 
 func (suite *ZippopotamUsTestSuite) SetupTest() {
 	suite.ApiClient = resty.New()
